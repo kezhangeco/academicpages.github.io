@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>A Starter Pack to Reproducible Scientific Computing</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Ke Zhang" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# A Starter Pack to Reproducible Scientific Computing
+## Cognitive Area Workshop 2022
+### Ke Zhang
+### 2022 January 24
+
+---
+
+
+
+&lt;style type="text/css"&gt;
+.remark-slide-content {
+    font-size: 25px;
+    padding: 1em 4em 1em 4em;
+}
+&lt;/style&gt;
+
+
+
+## What is a practical computing workflow?
+A standard operating procedure (SOP) for:
+  
+  1. Managing data: raw data &amp;rarr; clean data &amp;rarr; metadata
+  
+  2. Programming: `R` environment &amp;rarr; eliminate duplication
+  
+  3. Collaborating: shared online workspace
+  
+  4. Organizing projects: structured folders
+  
+  5. Tracking work: timestamping changes &amp;rarr; `Git`
+  
+  6. Manuscripts: sync changes with others &amp;rarr; `Google Docs` 
+
+---
+## Why is a computing workflow important?
+
+- Help you to track research changes.
+
+- Prevent (hopefully) communication errors. 
+
+- Improves research reproducibility, such that your collaborators (e.g., yourself in the future) can replicate the projects easily.
+
+---
+class: inverse, middle, center
+
+# Data Management
+
+---
+## Raw Data
+
+- Save them in the original format from data collections, do not overwrite with the clean data.
+
+- Backed up in three locations, including an external drive. 
+
+- If the data collection process is long, back up raw data constantly from the place of the data collection.
+
+- If the data are too large, avoid making local copies casually. You should consult the IT for remote storage.    
+
+---
+## Clean Data
+
+*Create the data you wish to see in the world:*
+
+- **Variable/Column names**. E.g., No to `Q1`, Yes to `Participant_ID`.
+
+- **File names**: meaningful names, possibly include metadata. 
+
+- **Metadata**: data explaining what the research data are about. E.g., a README file explaining variable names, recoding rules, missing values (`NA`), file names.
+
+---
+## Record all the steps of data analyses
+
+- **For R**: steps will be recorded in your analysis scripts with comments.
+
+- **For humans**: use a README file to record data analyses.
+
+&lt;img src="knit_pics/clean_steps.png" width="65%" /&gt;
+
+---
+class: inverse, middle, center
+
+# Programming
+
+---
+## R project with `renv`
+- RStudio `New File` &amp;rarr; `New Project` for an independent project.
+
+- Create a project-local `R` environment using `renv`, which isolates projects' package library, so that:
+  - Updating packages in Project A won't affect packages in Project B.
+  - Local package versions can be recorded for reproducibility.
+  
+- Learn more about `renv` in https://www.youtube.com/watch?v=yjlEbIDevOs.
+
+---
+## Coding style
+- *More* short and single purpose functions, *less* big code blocks.
+
+- Eliminate duplication. Write a function if you need to achieve the same purpose twice.
+
+- Do not comment and uncomment code to control a program's behavior. Write a function...
+
+- Explain what this script is about at the start and comment every functions on their purpose, inputs, outputs.
+
+---
+class: inverse, middle, center
+
+# Collaboration
+
+---
+## Online shared workspace 
+
+- `GitHub/Gitlab`: share coding scripts.
+
+- Use a project management app to track tasks. 
+  - E.g., [Notion](https://www.notion.so/product/notion-for-education), [Trello](https://trello.com/en) 
+  
+--
+  
+  
+  **Beware of *data privacy* on these platforms, they store info remotely on their server, not locally.**
+
+ 
+---
+class: inverse, middle, center
+
+# Project Organization
+
+---
+## Project layout 
+
+- Put projects in independent folders.
+
+
+- Folder structure:
+
+  - **Data**: sub-folders for raw data &amp; cleaned data.
+  - **Docs**: manuscripts, lab notes, and etc.
+  - **Code (R `Project`)**: 
+      - 0_cleaning.Rmd
+      - 1_analysis,Rmd
+      - 2_functions.R
+      - README.md
+      - Linked to `GitHub`
+  - **Results**: generated from `RMarkdown`.
+
+---
+class: inverse, middle, center
+
+# Tracking Changes
+
+---
+## Version control
+- Many modifications happen in research projects, you need to create a system to keep tracking these changes. Optimally, you can retrieve a specific version of the project, and understand how and why these changes are made compared to the last version.
+
+
+**You should**:
+
+- Back up files ASAP once they created (e.g., use Time Machine constantly).
+
+- Maintain a checklists of changes, explaining changed contents and reasoning. 
+
+- Share changes frequently with collaborators.
+
+---
+## `Git`
+- `Git`: a version control system to track changes in files in research projects (e.g., code, results).
+
+- [`GitHub`](https://GitHub.com/): an online platform hosting `Git` projects. UBC also hosts `Git` projects via [`Gitlab`](https://gitlab.math.ubc.ca/), so you are likely to be safe to have non-public info there.
+
+
+
+**Scenario**
+
+- *Collaboration project*: highly recommended. `Git` tracks changes made by each contributor so that changes won't be conflicted.
+
+- *Solo project*: useful for timestamping changes, but it's SO PAINFUL to learn for this purpose alone. But, it's a good place to start learning for future collaborations.
+    - Manual alternative? Copy the entire project whenever a significant change has been made and then save it in a sub-folder with a timestamping name.
+
+---
+class: inverse, middle, center
+
+# Manuscript and The End
+
+---
+## Ready, Results!
+- Prepare the results using `RMarkdown`'s `knit` function
+  - `RMarkdown` render a document (e.g., PDF, PPT) of code and results. The advantage is that you no longer have "results_final.pdf", "results_final_final.pdf", because the latest script will always output a latest results. 
+  
+  - The `knit` function will also automatically export all graphs to the `R` working directory. 
+  
+- `Git` can also track changes in `RMarkdown` or markdown in general, unlike PDF or Word, so you can timestamp the results' version.
+
+---
+## Write Up
+- Use online tools to synchronizing writing with collaborators.
+
+- Recommend Google Docs because you can write together without creating conflicts.
+
+---
+## The End
+- Archive data.
+
+- Publish data with the `GitHub` repo for a reproducible project.
+
+---
+class: inverse, middle, center
+
+# A `GitHub` + `RStudio` version control workflow 
+
+---
+## Step 0: Software Installations
+You can follow the wonderful [`Happy Git and GitHub for the useR`](https://happygitwithr.com/install-intro.html) for details.
+
+- Register an account on [`GitHub`](https://GitHub.com/) or UBC [`Gitlab`](https://gitlab.math.ubc.ca/).
+
+- `R` and `RStudio`.
+
+- Install [`Git`](https://happygitwithr.com/install-git.html).
+
+- Install a `Git` client: `RStudio`, see [here](https://happygitwithr.com/git-client.html) for other options.
+
+---
+layout: true 
+
+## Step 1: Linking up `GitHub` + `RStudio`
+---
+
+- A new user needs to generate a new *Personal Access Token* on [`GitHub`](https://GitHub.com/settings/tokens). The token is a credential to interact with the `GitHub` server from you local computer.
+
+- Create a [new repo](https://GitHub.com/new) on `GitHub`.
+  - Check "Add a README file".
+
+---
+
+- Clone the repo to your local computer and link it with a R project, so that changes in this R project can be `Git` tracked and backed up on `GitHub`.
+
+  - `GitHub` repo, copy the HTTPS url from the green `Code` button.
+  - `RStudio` &amp;rarr; `File` &amp;rarr; `New Project` &amp;rarr; `Version Control` &amp;rarr; `Git`.
+  - Paste the HTTPS url into the `Repository URL`
+  - Enter your `GitHub` username + Token
+  - `Create Project` 
+  - Linked!
+
+---
+layout: false
+
+## Step 2: Make local changes, save, commit in `Git`
+
+Do this every time you finish something valuable. 
+
+- E.g., Just made some changes in the README file.
+
+- On `RStudio` upper right panel `Git` window, check **Staged** box of the README.md.
+
+- Click **Commit** &amp;rarr; write a commit message &amp;rarr; **Commit**. You just saved the changes locally, in the future, you can trace it back to this version knowing your **Commit** message.
+
+---
+
+## Step 2: Make local changes, save, commit in `Git` - `.gitignore`
+
+- DO NOT commit data files for the sake of privacy and storage space, that include `R` temporary data such as `.Rhistory`. You can use [`.gitignore` files](https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files) to ignore specified files.
+
+- `R project` will automatically add a `.gitignore` file, in which you can name whatever files you do not want `Git` to track. 
+[Here](https://github.com/github/gitignore/blob/main/R.gitignore) is a typical `.gitignore` file for `R`. 
+
+- Read the how to `.gitignore` on `RStudio` [here](https://carpentries-incubator.github.io/git-Rstudio-course/02-ignore/index.html). 
+
+---
+## Step 3: Push the local changes to the remote `GitHub` repo
+Do this less often, your collaborators may not need to see every attempts of the analysis.
+
+- Press the blue **Pull** button to download the changes made by your collaborators. Ignore if it's a solo project.
+
+- Press the green **Push** button to upload the changes to `GitHub`. You will then see the changes appear on the repo webpage.
+
+---
+## Step 4: Working with the `renv` package
+
+- Initialize an environment:
+```
+renv::init()
+```
+- After install/remove packages as needed, you can save the info about these packages in the lockfile (`renv.lock`):
+```
+renv::snapshot()
+```
+- After install/remove more packages, if you wish to revert to the library recorded in the lockfile:
+```
+renv::restore()
+```
+
+- The `.Rprofile`, `renv.lock` and `renv/activate.R` files should be version controlled, the `renv/library directory` can be ignored.
+
+---
+# Learning Resources
+- The six-step practical scientific computing is based on [Wilson et al., (2017)](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510).
+
+- Replace Word with Markdown for documentation (e.g., [Typora](https://typora.io/releases/all)).
+
+- [R Markdown Quick Tour](https://rmarkdown.RStudio.com/authoring_quick_tour.html#Output_Formats).
+
+- Introduction to a `renv` [workflow](https://RStudio.GitHub.io/renv/articles/renv.html) 
+
+- A `Git` [collaboration guide](https://ubc-dsci.GitHub.io/introduction-to-datascience/Getting-started-with-version-control.html).
+
+- [`Happy Git and GitHub for the useR`](https://happygitwithr.com/install-intro.html)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
