@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-Download Ke Zhang's [CV](https://kezhangeco.github.io/files/KeZhang_CV2022.pdf).
+Download Ke Zhang's [CV](https://kezhangeco.github.io/files/KeZhang_CV2023.pdf).
 
 
 
