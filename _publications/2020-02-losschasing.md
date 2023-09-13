@@ -2,11 +2,14 @@
 title: "Loss-chasing in gambling behaviour: neurocognitive and behavioural economic perspectives"
 collection: publications
 DOI: https://doi.org/10.1016/j.cobeha.2019.10.006
+excerpt: ''
 date: 2020-02-01
 venue: 'Current Opinion in Behavioral Sciences'
 paperurl: 'https://doi.org/10.1016/j.cobeha.2019.10.006'
 citation: 'Zhang, K., & Clark, L. (2020). Loss-chasing in gambling behaviour: Neurocognitive and behavioural economic perspectives. Current Opinion in Behavioral Sciences, 31, 1-7.'
 ---
+
+
 
 ## Abstract
 
