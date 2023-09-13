@@ -6,7 +6,7 @@ excerpt: ''
 date: 2019-09-01
 venue: 'Behaviour Research and Therapy'
 paperurl: 'https://doi.org/10.1016/j.brat.2018.10.019'
-citation: 'Zhang, K., Szanto, K., Clark, L., & Dombrovski, A. Y. (2019). Behavioral empathy failures and suicidal behavior. *Behaviour research and therapy*, *120*, 103329.'
+citation: 'Zhang, K., Szanto, K., Clark, L., & Dombrovski, A. Y. (2019). Behavioral empathy failures and suicidal behavior. Behaviour research and therapy, 120, 103329.'
 ---
 ## Abstract
 

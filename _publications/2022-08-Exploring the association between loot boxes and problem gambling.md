@@ -6,7 +6,7 @@ excerpt: ''
 date: 2022-08-01
 venue: 'Addictive Behaviors'
 paperurl: 'https://doi.org/10.1016/j.addbeh.2022.107318'
-citation: 'Sidloski, B., Brooks, G. A., Zhang, K., & Clark, L. (2022). Exploring the association between loot boxes and problem gambling: Are video gamers referring to loot boxes when they complete gambling screening tools?. *Addictive Behaviors*, *131*, 107318.'
+citation: 'Sidloski, B., Brooks, G. A., Zhang, K., & Clark, L. (2022). Exploring the association between loot boxes and problem gambling: Are video gamers referring to loot boxes when they complete gambling screening tools?. Addictive Behaviors, 131, 107318.'
 ---
 ## Abstract
 
