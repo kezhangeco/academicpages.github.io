@@ -2,7 +2,6 @@
 title: "Loss-chasing in gambling behaviour: neurocognitive and behavioural economic perspectives"
 collection: publications
 DOI: https://doi.org/10.1016/j.cobeha.2019.10.006
-excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
 date: 2020-02-01
 venue: 'Current Opinion in Behavioral Sciences'
 paperurl: 'https://doi.org/10.1016/j.cobeha.2019.10.006'
